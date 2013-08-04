@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 require 'time'
 
 class MissionControl
   attr_accessor :punch_time, :total_time
-=======
+
 require 'fileutils'
 
 class MissionControlCommand
@@ -19,7 +19,6 @@ class MissionControlCommand
       @path
     end
   end
->>>>>>> f90f6bf740efef220ff8dce951ab44663c2a45bf
 
   def initialize(command)
     @cmd = command
@@ -27,7 +26,7 @@ class MissionControlCommand
     @total_time = 0
   end
 
-<<<<<<< HEAD
+
   def punch(time=Time.now)
     if @cmd == "in"
       if File.exists?("punch_card")
@@ -55,7 +54,7 @@ class MissionControlCommand
         end
         "Your Checked Out"
       end
-=======
+
   def output
     if @cmd == 'in'
       File.open(self.object_check_in_path, 'w') do |f|
@@ -65,7 +64,7 @@ class MissionControlCommand
     else
       FileUtils.rm_f(self.object_check_in_path)
       'You are checked out'
->>>>>>> f90f6bf740efef220ff8dce951ab44663c2a45bf
+
     end
   end
 
